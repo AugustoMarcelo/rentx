@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { useNavigation } from '@react-navigation/native';
 import {
   Keyboard,
   KeyboardAvoidingView,
@@ -6,14 +7,16 @@ import {
   ScrollView,
   TouchableOpacity,
 } from 'react-native';
+import { StatusBar } from 'expo-status-bar';
 import { Feather } from '@expo/vector-icons';
 
 import InputText from '../../components/Form/InputText';
-
-import * as S from './styles';
 import Checkbox from '../../components/Form/Checkbox';
 
+import * as S from './styles';
+
 export default function Login() {
+  const { goBack } = useNavigation();
   const scrollRef = useRef<ScrollView>(null);
   const [marginActive, setMarginActive] = useState(false);
   const [remember, setRemember] = useState(false);
@@ -42,12 +45,13 @@ export default function Login() {
 
   return (
     <>
+      <StatusBar style="dark" />
       <KeyboardAvoidingView
         behavior={Platform.OS === 'ios' ? 'padding' : undefined}
         style={{ flexGrow: 1 }}
         enabled
       >
-        <S.BackButton>
+        <S.BackButton onPress={goBack}>
           <Feather name="chevron-left" color="#AEAEB3" size={20} />
         </S.BackButton>
         <ScrollView
