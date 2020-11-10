@@ -28,8 +28,8 @@ export default function App() {
 
   return (
     <>
-      <OnboardingStack />
       <StatusBar style="light" />
+      <OnboardingStack />
     </>
   );
 }
