@@ -2,6 +2,10 @@
   <img width="182" alt="RentX" src="./src/images/logo.png">
 </h1>
 
+<h1 align="center">
+  <img height="500" src="https://res.cloudinary.com/augustomarcelo/image/upload/v1605568293/Rentx-preview.png">
+</h1>
+
 ## 🚘 RentX | Rocketseat GoStack Rewards
 
 This application offers car rental services to a fictional rental company in the city of Rocketland. The mobile version represents the customer's view (end user).
@@ -19,6 +23,8 @@ This application offers car rental services to a fictional rental company in the
   - [react-native-swiper](https://github.com/leecade/react-native-swiper) (to create onboarding page)
   - [react-native-calendar-picker](https://github.com/stephy/CalendarPicker)
   - [moment](https://momentjs.com/) (used by CalendarPicker)
+  - [react-native-svg-transformer](https://github.com/kristerkari/react-native-svg-transformer)
+  - [react-native-svg](https://github.com/react-native-svg/react-native-svg) (required by react-native-svg-transformer, see [this gist](https://gist.github.com/AugustoMarcelo/e3b9303ec8eb65ee9d0d0ac6daf73a5b) about how to use svg files in expo projects)
 ---
 
 ## 💻 How to run
