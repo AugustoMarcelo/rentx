@@ -5,18 +5,22 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "eject": "expo eject"
+    "eject": "expo eject",
+    "api": "json-server --host 0.0.0.0 --watch data.json -p 3000"
   },
   "dependencies": {
     "@expo-google-fonts/archivo": "^0.1.0",
     "@expo-google-fonts/inter": "^0.1.0",
     "@react-native-community/masked-view": "0.1.10",
+    "@react-navigation/bottom-tabs": "^5.11.1",
     "@react-navigation/native": "^5.8.6",
     "@react-navigation/stack": "^5.12.3",
+    "axios": "^0.21.0",
     "expo": "~39.0.2",
     "expo-constants": "~9.2.0",
     "expo-font": "~8.3.0",
     "expo-status-bar": "~1.0.2",
+    "json-server": "^0.16.2",
     "moment": "^2.29.1",
     "react": "16.13.1",
     "react-dom": "16.13.1",
@@ -26,6 +30,8 @@
     "react-native-reanimated": "~1.13.0",
     "react-native-safe-area-context": "3.1.4",
     "react-native-screens": "~2.10.1",
+    "react-native-svg": "12.1.0",
+    "react-native-svg-transformer": "^0.14.3",
     "react-native-swiper": "^1.6.0",
     "react-native-web": "~0.13.12",
     "styled-components": "5.1.1"
