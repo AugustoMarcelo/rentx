@@ -5784,6 +5784,16 @@ readable-stream@^2.0.1, readable-stream@^2.2.2, readable-stream@~2.3.6:
     string_decoder "~1.1.1"
     util-deprecate "~1.0.1"
 
+reanimated-bottom-sheet@^1.0.0-alpha.22:
+  version "1.0.0-alpha.22"
+  resolved "https://registry.yarnpkg.com/reanimated-bottom-sheet/-/reanimated-bottom-sheet-1.0.0-alpha.22.tgz#01a200946f1a461f01f1e773e5b4961c2df2e53b"
+  integrity sha512-NxecCn+2iA4YzkFuRK5/b86GHHS2OhZ9VRgiM4q18AC20YE/psRilqxzXCKBEvkOjP5AaAvY0yfE7EkEFBjTvw==
+
+recoil@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/recoil/-/recoil-0.1.2.tgz#844c612f535826dbe54c977761a67ded16f6d063"
+  integrity sha512-hIRrHlkmW4yITlBFprVYjVPhzPKYrJKoaDrrJtAtbkMeXfXaa/XE5OlyR10n+rNfnKWNToCKb3Z4fo86IGjkzg==
+
 recyclerlistview@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/recyclerlistview/-/recyclerlistview-3.0.0.tgz#72ef5ef0246cb851695698c37836001651e70b4f"
@@ -5955,6 +5965,11 @@ rimraf@~2.2.6:
   version "2.2.8"
   resolved "https://registry.yarnpkg.com/rimraf/-/rimraf-2.2.8.tgz#e439be2aaee327321952730f99a8929e4fc50582"
   integrity sha1-5Dm+Kq7jJzIZUnMPmaiSnk/FBYI=
+
+rn-range-slider@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/rn-range-slider/-/rn-range-slider-2.0.3.tgz#bed56fdac9bff5fd97a03846442077c9d3eb3061"
+  integrity sha512-tQE8aZ31VexrKfqFPMIr6Et9xrtpRJzo0sLoCB5HNRtXZ9J/NM9FAWSidcfS8wOep1hIf7pY/BTEh8tw5iDcQw==
 
 rsvp@^4.8.4:
   version "4.8.5"
