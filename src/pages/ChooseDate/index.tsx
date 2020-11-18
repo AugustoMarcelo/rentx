@@ -5,6 +5,7 @@ import CalendarPicker from 'react-native-calendar-picker';
 import { Moment } from 'moment';
 import moment from 'moment';
 import 'moment/locale/pt-br';
+import { useNavigation } from '@react-navigation/native';
 
 import ReadOnlyDate from '../../components/ReadOnlyDate';
 import Values from './utils/values';
@@ -14,11 +15,14 @@ import * as S from './styles';
 
 moment.locale('pt-br');
 
-export default function ChooseData() {
+export default function ChooseDate() {
   const [selectedDate, setSelectedDate] = useState({
     start: '',
     end: '',
   });
+
+  const { navigate } = useNavigation();
+
   function renderCustomArrow(direction: 'left' | 'right') {
     return <Feather name={`chevron-${direction}`} color="#7A7A80" size={20} />;
   }
@@ -41,6 +45,12 @@ export default function ChooseData() {
     }
   }
 
+  function handleSubmitDateRange() {
+    const { start, end } = selectedDate;
+
+    navigate('AppTabs', { start, end });
+  }
+
   return (
     <S.Container>
       <S.Header>
@@ -51,7 +61,10 @@ export default function ChooseData() {
         <S.DateRangeContainer>
           <ReadOnlyDate label="De" date={selectedDate.start} />
           <Image source={Arrow} />
-          <ReadOnlyDate label="Até" date={selectedDate.end || selectedDate.start} />
+          <ReadOnlyDate
+            label="Até"
+            date={selectedDate.end || selectedDate.start}
+          />
         </S.DateRangeContainer>
       </S.Header>
 
@@ -74,23 +87,23 @@ export default function ChooseData() {
               textStyle: {
                 fontFamily: 'Archivo_600SemiBold',
                 fontSize: 10,
-                color: '#AEAEB3'
-              }
-            }
+                color: '#AEAEB3',
+              },
+            };
           }}
           monthYearHeaderWrapperStyle={{
-            alignItems: 'flex-start'
+            alignItems: 'flex-start',
           }}
           showDayStragglers
           dayShape="square"
           todayBackgroundColor="#fff"
-          todayTextStyle={{ fontWeight: "bold" }}
+          todayTextStyle={{ fontWeight: 'bold' }}
           selectedDayTextColor="#fff"
           dayLabelsWrapper={{
             borderTopWidth: 0,
             paddingBottom: 15,
             borderBottomColor: '#EBEBF0',
-            marginBottom: 15
+            marginBottom: 15,
           }}
           selectedRangeStartStyle={{
             backgroundColor: '#DC1637',
@@ -106,8 +119,11 @@ export default function ChooseData() {
             backgroundColor: '#FDEDEF',
           }}
         />
-        
-        <S.ConfirmButton enabled={!!selectedDate.start}>
+
+        <S.ConfirmButton
+          enabled={!!selectedDate.start}
+          onPress={handleSubmitDateRange}
+        >
           <S.ConfirmButtonText>Confirmar</S.ConfirmButtonText>
         </S.ConfirmButton>
       </S.CalendarContainer>
