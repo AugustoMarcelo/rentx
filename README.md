@@ -20,11 +20,14 @@ This application offers car rental services to a fictional rental company in the
   - Expo (fonts, constants)
   - Typescript
   - [@react-navigation](https://reactnavigation.org/)
-  - [react-native-swiper](https://github.com/leecade/react-native-swiper) (to create onboarding page)
+  - [react-native-swiper](https://github.com/leecade/react-native-swiper) (To create onboarding page)
   - [react-native-calendar-picker](https://github.com/stephy/CalendarPicker)
-  - [moment](https://momentjs.com/) (used by CalendarPicker)
+  - [moment](https://momentjs.com/) (Used by CalendarPicker)
   - [react-native-svg-transformer](https://github.com/kristerkari/react-native-svg-transformer)
-  - [react-native-svg](https://github.com/react-native-svg/react-native-svg) (required by react-native-svg-transformer, see [this gist](https://gist.github.com/AugustoMarcelo/e3b9303ec8eb65ee9d0d0ac6daf73a5b) about how to use svg files in expo projects)
+  - [rn-range-slider](https://github.com/githuboftigran/rn-range-slider) (To create custom range slider)
+  - [react-native-svg](https://github.com/react-native-svg/react-native-svg) (Required by react-native-svg-transformer, see [this gist](https://gist.github.com/AugustoMarcelo/e3b9303ec8eb65ee9d0d0ac6daf73a5b) about how to use svg files in expo projects)
+  - [reanimated-bottom-sheet](https://github.com/osdnk/react-native-reanimated-bottom-sheet) (To create bottom sheet filter)
+  - [Recoil](https://recoiljs.org/) (Management state library)
 ---
 
 ## 💻 How to run
@@ -38,6 +41,7 @@ This application offers car rental services to a fictional rental company in the
   > Some adjustments have been made to the library that provides the calendar. So after running yarn command, access [this gist](https://gist.github.com/AugustoMarcelo/b6b657b71b8f0146e43d17db5b1bdb14), copy and replace the codes in the node_modules folder
 
   > Running mobile project
+  
   > You will need to download the Expo app. When the application starts, scan the qrcode with the Expo you installed.
   ```bash
     # Accessing mobile project
