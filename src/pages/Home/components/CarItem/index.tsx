@@ -1,7 +1,8 @@
 import React, { useMemo } from 'react';
 
-import { ICar } from '../../pages/Home';
-import { DropletIcon, EnergyIcon, LeafIcon } from '../../images/icons';
+import { ICar } from '../../../../@types/types';
+
+import { DropletIcon, EnergyIcon, LeafIcon } from '../../../../images/icons';
 import * as S from './styles';
 
 export default function CarItem({ brand, model, url, daily, fuel }: ICar) {

@@ -15,7 +15,7 @@ import RangeSlider from 'rn-range-slider';
 import api from '../../services/api';
 
 import ReadOnlyDate from '../../components/ReadOnlyDate';
-import CarItem from '../../components/CarItem';
+import CarItem from './components/CarItem';
 import { SlidersIcon } from '../../images/icons';
 import {
   SliderThumb,
@@ -29,14 +29,7 @@ import { useRecoilState } from 'recoil';
 import { bottomSheetOpened } from '../../atoms';
 
 import * as S from './styles';
-
-export interface ICar {
-  brand: string;
-  model: string;
-  url: string;
-  daily: number;
-  fuel: 'gasoline' | 'alcohol' | 'energy';
-}
+import { ICar } from '../../@types/types';
 
 interface DateRangeRouteParams {
   start: string;
