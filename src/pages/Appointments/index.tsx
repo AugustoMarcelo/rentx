@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 import api from '../../services/api';
 import AppointmentItem from './components/AppointmentItem';
-import { ICar } from '../Home';
+import {ICar} from '../../@types/types';
 
 import * as S from './styles';
 
