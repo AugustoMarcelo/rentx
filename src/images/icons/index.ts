@@ -13,3 +13,5 @@ export { default as MagnifyingGlassIcon } from './magnifying_glass.svg';
 export { default as MailIcon } from './mail.svg';
 export { default as SlidersIcon } from './sliders.svg';
 export { default as CameraIcon } from './camera.svg';
+export { default as PencilIcon } from './pencil.svg';
+export { default as PowerIcon } from './power.svg';
