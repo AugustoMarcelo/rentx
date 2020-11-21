@@ -8,11 +8,15 @@ import getFuelIcon from '../../../../utils/getFuelIcon';
 
 import * as S from './styles';
 
+interface IAppointmentItem {
+  appointment: IAppointment;
+  showPeriod?: boolean;
+}
+
 export default function AppointmentItem({
-  car,
-  start,
-  end,
-}: IAppointment) {
+  appointment: { car, start, end },
+  showPeriod = true,
+}: IAppointmentItem) {
   const isAfterToday = useMemo(() => {
     return moment(end).isAfter(new Date());
   }, [end]);
@@ -36,8 +40,8 @@ export default function AppointmentItem({
     <S.Container>
       <S.VehicleInfo>
         <View>
-          <S.Brand>{car.model}</S.Brand>
-          <S.ModelName>{car.model}</S.ModelName>
+          <S.Brand>{car?.brand}</S.Brand>
+          <S.ModelName>{car?.model}</S.ModelName>
 
           <View
             style={{
@@ -48,39 +52,45 @@ export default function AppointmentItem({
           >
             <View style={{ marginRight: 12 }}>
               <S.Label>{periodInDays}</S.Label>
-              <S.PriceText>R$ {car.daily}</S.PriceText>
+              <S.PriceText>R$ {car?.daily}</S.PriceText>
             </View>
-            {getFuelIcon(car.fuel)}
+            {getFuelIcon(car?.fuel)}
           </View>
         </View>
-        <S.CarImage source={{ uri: car.url }} resizeMode="contain" />
+        <S.CarImage source={{ uri: car?.url }} resizeMode="contain" />
       </S.VehicleInfo>
 
-      <S.PeriodContainer active>
-        {isAfterToday ? (
-          <S.PeriodActiveText>Utilizando até {dateEndFormatted}</S.PeriodActiveText>
-        ) : (
-          <>
-            <S.PeriodLabel>Período</S.PeriodLabel>
-            <View
-              style={{
-                flexDirection: 'row',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-              }}
-            >
-              <S.PeriodInactiveText>{dateStartFormatted}</S.PeriodInactiveText>
-              <AntDesign
-                name="arrowright"
-                size={16}
-                color="#AEAEB3"
-                style={{ marginHorizontal: 5 }}
-              />
-              <S.PeriodInactiveText>{dateEndFormatted}</S.PeriodInactiveText>
-            </View>
-          </>
-        )}
-      </S.PeriodContainer>
+      {showPeriod && (
+        <S.PeriodContainer active>
+          {isAfterToday ? (
+            <S.PeriodActiveText>
+              Utilizando até {dateEndFormatted}
+            </S.PeriodActiveText>
+          ) : (
+            <>
+              <S.PeriodLabel>Período</S.PeriodLabel>
+              <View
+                style={{
+                  flexDirection: 'row',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                }}
+              >
+                <S.PeriodInactiveText>
+                  {dateStartFormatted}
+                </S.PeriodInactiveText>
+                <AntDesign
+                  name="arrowright"
+                  size={16}
+                  color="#AEAEB3"
+                  style={{ marginHorizontal: 5 }}
+                />
+                <S.PeriodInactiveText>{dateEndFormatted}</S.PeriodInactiveText>
+              </View>
+            </>
+          )}
+        </S.PeriodContainer>
+      )}
     </S.Container>
   );
 }

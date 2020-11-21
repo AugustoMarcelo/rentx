@@ -20,7 +20,6 @@ const Appointments: React.FC = () => {
   useEffect(() => {
     async function loadCars() {
       const response = await api.get('appointments?_expand=car');
-      console.log(response.data);
       setAppointments(response.data);
     }
 
@@ -31,14 +30,14 @@ const Appointments: React.FC = () => {
     <S.Container>
       <S.Header>
         <S.Title>Agendamentos</S.Title>
-        <S.AppointmentsCountText>5 períodos</S.AppointmentsCountText>
+        <S.AppointmentsCountText>{appointments.length} períodos</S.AppointmentsCountText>
       </S.Header>
 
       <S.AppointmentsListSroll
         data={appointments}
         keyExtractor={appointment => String(appointment.id)}
         renderItem={({ item }: { item: IAppointment }) => (
-          <AppointmentItem {...item} />
+          <AppointmentItem appointment={item} />
         )}
       />
     </S.Container>
