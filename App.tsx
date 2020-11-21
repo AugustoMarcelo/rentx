@@ -9,8 +9,9 @@ import {
 } from '@expo-google-fonts/archivo';
 import { Inter_400Regular, Inter_500Medium } from '@expo-google-fonts/inter';
 import { StatusBar } from 'expo-status-bar';
+import { RecoilRoot } from 'recoil';
 
-import OnboardingStack from './src/routes/OnboardingStack';
+import AppStack from './src/routes/AppStack';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -29,7 +30,9 @@ export default function App() {
   return (
     <>
       <StatusBar style="light" />
-      <OnboardingStack />
+      <RecoilRoot>
+        <AppStack />
+      </RecoilRoot>
     </>
   );
 }
